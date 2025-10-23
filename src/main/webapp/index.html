@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream Cars - Explore the Best Rides</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #0e0e0e;
+      color: #f2f2f2;
+    }
+    header {
+      background-color: #111;
+      color: #00bcd4;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #222;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #00bcd4;
+      color: #111;
+    }
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin: 0;
+      color: #fff;
+      text-shadow: 2px 2px 8px #000;
+    }
+    .hero p {
+      font-size: 20px;
+      color: #ccc;
+    }
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      color: #00bcd4;
+      margin-bottom: 20px;
+    }
+    .cars {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .car-card {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      width: 300px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .car-card:hover {
+      transform: scale(1.05);
+    }
+    .car-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .car-card h3 {
+      color: #00bcd4;
+      margin-top: 10px;
+    }
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dream Cars</h1>
+    <p>Explore the future of driving today</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#models">Models</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h1>Welcome to Dream Cars</h1>
+    <p>Where innovation meets performance</p>
+  </section>
+
+  <section class="section" id="models">
+    <h2>Our Top Models</h2>
+    <div class="cars">
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Car 1">
+        <h3>Model X1</h3>
+        <p>Luxury electric sedan with top speed of 250 km/h and 600km range.</p>
+      </div>
+      <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=80" alt="Car 2">
+        <h3>Speedster Z</h3>
+        <p>High-performance sports car designed for ultimate speed and control.</p>
+      </div>
+      <div class="car-card">
+        <img src="https://etimg.etb2bimg.com/photo/61543962.cms" alt="Car 3">
+        <h3>EcoRide S</h3>
+        <p>Eco-friendly electric car built for urban travel and efficiency.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>At Dream Cars, we combine technology, style, and sustainability to bring you the next generation of vehicles. Our mission is to make driving smarter, faster, and greener for everyone.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Dream Cars | All Rights Reserved
+  </footer>
+</body>
+</html>
