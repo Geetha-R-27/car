@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'MAVEN_HOME'
+    }
+
     stages {
 
         stage('Checkout') {
@@ -18,16 +22,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                # Create application directory
                 sudo mkdir -p /var/www/app
 
-                # Copy the generated JAR to the app directory
                 sudo cp target/*.jar /var/www/app/app.jar
 
-                # Stop old running instance (if exists)
                 pkill -f app.jar || true
 
-                # Start new application
                 nohup java -jar /var/www/app/app.jar > /var/www/app/log.out 2>&1 &
                 '''
             }
