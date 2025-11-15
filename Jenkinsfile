@@ -9,11 +9,26 @@ pipeline {
             }
         }
 
+        stage('Build') {
+            steps {
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+
         stage('Deploy') {
             steps {
                 sh '''
-                sudo rm -rf /var/www/html/*
-                sudo cp -r * /var/www/html/
+                # Create application directory
+                sudo mkdir -p /var/www/app
+
+                # Copy the generated JAR to the app directory
+                sudo cp target/*.jar /var/www/app/app.jar
+
+                # Stop old running instance (if exists)
+                pkill -f app.jar || true
+
+                # Start new application
+                nohup java -jar /var/www/app/app.jar > /var/www/app/log.out 2>&1 &
                 '''
             }
         }
@@ -21,7 +36,7 @@ pipeline {
 
     post {
         success {
-            echo "Static Website Deployed Successfully!"
+            echo "Java Application Deployed Successfully!"
         }
     }
 }
